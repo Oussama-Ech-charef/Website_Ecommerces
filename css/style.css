@@ -22,6 +22,10 @@
     --Sale_color: #E51A1A;
 }
 
+body {
+    padding-top: 180px;
+}
+
 span {
     color: var(--main_color);
 }
@@ -287,4 +291,33 @@ header .bottom_header .nav_links li a {
 header .bottom_header .nav_links li:hover a,
 header .bottom_header .nav_links li.active a {
     color: var(--main_color);
+}
+
+
+
+/* slide */
+
+.slider {
+    position: relative;
+}
+
+.slider .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider .banner_2 {
+    width: 23%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .banner_2 a {
+    height: 100%;
+    width: 100%;
+}
+
+
+.slider .container .slide-swp {
+    width: 75%;
+    overflow: hidden;
 }
