@@ -4,8 +4,14 @@ function Open_Categ_list(){
     categoty_nav_list.classList.toggle("active");
 }
 
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".slide-swp", {
       pagination: {
         el: ".swiper-pagination",
+        dynamicBullets: true,
+        clickable: true
       },
+      autoplay:{
+        delay:2500,
+      },
+      loop: true
     });

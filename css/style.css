@@ -286,7 +286,7 @@ header .bottom_header .nav_links  {
 
 header .bottom_header .nav_links li a {
     transition: 0.3s;
-    color: var(--color_heading);
+    color: var(--color_heading);                                              
 }
 header .bottom_header .nav_links li:hover a,
 header .bottom_header .nav_links li.active a {
@@ -320,4 +320,22 @@ header .bottom_header .nav_links li.active a {
 .slider .container .slide-swp {
     width: 75%;
     overflow: hidden;
+    position: relative;
+}
+
+.swiper-wrapper {
+    height: auto !important;
+}
+
+.slider .container .slide-swp .swiper-pagination span{
+    background-color: white;
+    opacity: 1;
+}
+
+
+.swiper-pagination-bullet-active{
+    background: var(--main_color) !important;
+    width: 34px !important;
+    height: 8px !important;
+    border-radius: 30px !important;
 }
