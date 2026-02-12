@@ -441,15 +441,20 @@ header .bottom_header .nav_links li.active a{
     color: var(--color_heading);
     font-weight: bold;
     border-radius: 5px;
-    height: 35px;
-    width: 35px;
+    height: 35px ;
+    width: 35px ;
     border: 1px solid var(--border_color);
+    
 }
-.slide .container .mySwiper .btn_Swip::after{
-    font-size: 12px;
+.btn_Swip svg {
+    width: 8px !important; 
+     
 }
+
+
 .slide .container .mySwiper .btn_Swip.swiper-button-prev{
     left: calc(100% - 80px);
+    
 }
 
 
@@ -506,6 +511,7 @@ header .bottom_header .nav_links li.active a{
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 .product .name_product a:hover{
