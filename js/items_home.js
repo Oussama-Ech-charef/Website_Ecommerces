@@ -4,16 +4,22 @@ fetch('products.json')
     console.log(data);
     
     const swiper_items_sale = document.getElementById("swiper_items_sale")
-})
 
 
+    data.forEach(product => {
+        if(product.old_price) {
+
+            const percent_disc = Math.floor((product.old_price - product.price) / product.old_price * 100)
 
 
-<div class="swiper-slide product">
-                        <span class="sale_present">50%</span>
+            swiper_items_sale.innerHTML += `
+
+
+            <div class="swiper-slide product">
+                        <span class="sale_present">${percent_disc}%</span>
 
                         <div class="img_product">
-                            <a href="#"><img src="img/product/0.png" alt="online"></a>
+                            <a href="#"><img src="${product.img}" alt="online"></a>
                         </div>
 
                         <div class="stars">
@@ -24,13 +30,11 @@ fetch('products.json')
                             <i class="fa-solid fa-star"></i>
                         </div>
 
-                        <p class="name_product"><a href="#">Lorem ipsum dolor sit amet consectetur, 
-                            adipisicing elit. Veniam facilis officiis nemo reprehenderit ex!
-                             Fugiat velit aut dolore ea officiis!</a></p>
+                        <p class="name_product"><a href="#">${product.name}</a></p>
 
                              <div class="price">
-                                <p><span>50$</span></p>
-                                <p class="old_price">80$</p>
+                                <p><span>${product.price}$</span></p>
+                                <p class="old_price">${product.old_price}$</p>
                              </div>
 
                              <div class="icons">
@@ -39,4 +43,18 @@ fetch('products.json')
                                 </span>
                                 <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
                              </div>
-                    </div>
+                    </div>`
+        }
+    })
+
+
+
+
+
+
+})
+
+
+
+
+                                                                

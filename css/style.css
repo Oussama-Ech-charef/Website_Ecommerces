@@ -594,3 +594,19 @@ header .bottom_header .nav_links li.active a{
     scale: 1.05;
     background: #f47600;
 }
+
+
+/* banners banners 4 */
+
+.banners {
+    margin: 50px 0;
+}
+.banners .banners_boxs{
+    display: flex;
+    justify-content: space-between;
+}
+
+.banners .banners_boxs .box{
+    width: 49%;
+
+}
