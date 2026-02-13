@@ -596,7 +596,7 @@ header .bottom_header .nav_links li.active a{
 }
 
 
-/* banners banners 4 */
+/* banners banners 3 */
 
 .banners {
     margin: 50px 0;
@@ -608,5 +608,10 @@ header .bottom_header .nav_links li.active a{
 
 .banners .banners_boxs .box{
     width: 49%;
+
+}
+
+.banners .banners_boxs.banner_3_img .box{
+    width: 32%;
 
 }
