@@ -23,7 +23,7 @@
     <div class="cart">
         <div class="top_cart">
             <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
-            <span class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
+            <span onclick="open_close_cart()" class="close_cart"><i class="fa-regular fa-circle-xmark"></i></span>
         </div>
 
 
@@ -39,7 +39,7 @@
                     <p class="price_cart">$80</p>
                     <div class="quantity_control">
                         <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
+                        <span class="quantity">35</span>
                         <button class="Increase_quantity">+</button>
                     </div>
                 </div>
@@ -62,118 +62,7 @@
 
                 <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
             </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-            <div class="item_cart">
-                <img src="img/product/15.png" alt="online">
-                <div class="content">
-                    <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
-                    <p class="price_cart">$80</p>
-                    <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
-                        <span class="quantity">3</span>
-                        <button class="Increase_quantity">+</button>
-                    </div>
-                </div>
-
-                <button class="delete_item"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
+            
 
 
 
@@ -188,8 +77,8 @@
             </div>
 
             <div class="button_cart">
-                <a href="#" class="btn_cart">Checkout</a>
-                <span class="btn_cart trans_bg">Shop More</span>
+                <a href="#" class="btn_cart btn">Checkout</a>
+                <span onclick="open_close_cart()" class="btn_cart trans_bg btn">Shop More</span>
             </div>
         </div>
 
@@ -235,7 +124,7 @@
                         </a>
                     </div>
 
-                    <div class="icon">
+                    <div onclick="open_close_cart()" class="icon">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span class="count count_item_header">0</span>
                     </div>
@@ -327,7 +216,7 @@
     </div>
 
 
-
+  
 
 
     <div class="banners_4">
