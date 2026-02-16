@@ -11,3 +11,21 @@ let cart = document.querySelector('.cart');
 function open_close_cart() {
     cart.classList.toggle("active")
 }
+
+
+fetch('products.json')
+.then(response => response.json())
+.then(data => {
+    
+    const addToCartButtons = document.querySelectorAll(".btn_add_cart");
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", (event) => {
+            
+            const productId = event.currentTarget.getAttribute('data-id');
+            console.log(productId);
+
+        });
+    });
+
+});
