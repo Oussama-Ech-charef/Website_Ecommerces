@@ -1,6 +1,8 @@
 fetch('products.json')
 .then(response => response.json())
 .then(data => {
+    console.log(data);
+    
     
     const cart = JSON.parse(localStorage.getItem('cart')) || []
 
@@ -44,7 +46,7 @@ fetch('products.json')
                              </div>
 
                              <div class="icons">
-                                <span class="btn_add_cart">
+                                <span class="btn_add_cart" data-id="${product.id}">
                                     <i class="fa-solid fa-cart-shopping"></i> add to cart
                                 </span>
                                 <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
@@ -92,7 +94,7 @@ fetch('products.json')
                        </div>
 
                        <div class="icons">
-                           <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
+                           <span class="btn_add_cart" data-id="${product.id}">
                                 <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
                             </span>
                            <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
@@ -148,7 +150,7 @@ fetch('products.json')
                        </div>
 
                        <div class="icons">
-                           <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
+                           <span class="btn_add_cart" data-id="${product.id}">
                                 <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
                             </span>
                            <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
@@ -204,8 +206,8 @@ fetch('products.json')
                        </div>
 
                        <div class="icons">
-                           <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
-                                <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
+                           <span class="btn_add_cart" data-id="${product.id}">
+                                <i class="fa-solid fa-cart-shopping"></i> add to cart
                             </span>
                            <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
                        </div>
@@ -215,6 +217,9 @@ fetch('products.json')
            
            
            `
+
+           console.log(product.id);
+           
 
 
 
