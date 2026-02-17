@@ -16,6 +16,9 @@ function open_close_cart() {
 fetch('products.json')
 .then(response => response.json())
 .then(data => {
+
+        console.log(data);
+
     
     const addToCartButtons = document.querySelectorAll(".btn_add_cart");
     
@@ -23,9 +26,27 @@ fetch('products.json')
         button.addEventListener("click", (event) => {
             
             const productId = event.currentTarget.getAttribute('data-id');
-            console.log(productId);
+            const selcetedProduct = data.find(product => product.id == productId)
 
+
+
+
+            addTocart(selcetedProduct)
         });
     });
 
 });
+
+
+
+function addTocart(product) {
+    console.log(product);
+
+
+    let cart = [];
+
+    cart.push({... product , quantity: 1})
+    localStorage.setItem('cart', JSON.stringify(cart))
+
+    
+}
