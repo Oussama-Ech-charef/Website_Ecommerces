@@ -1,11 +1,19 @@
 fetch('products.json')
 .then(response => response.json())
 .then(data => {
-    console.log(data);
     
     
-    const cart = JSON.parse(localStorage.getItem('cart')) || []
-
+    let cart = [];
+    const cartRaw = localStorage.getItem('cart');
+    if (cartRaw) {
+        try {
+            cart = JSON.parse(cartRaw) || [];
+        } catch (err) {
+            console.warn('Corrupted `cart` in localStorage — resetting to []', err);
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    }
     const swiper_items_sale = document.getElementById("swiper_items_sale")
 
     const swiper_elctronics = document.getElementById("swiper_elctronics")
@@ -218,7 +226,7 @@ fetch('products.json')
            
            `
 
-           console.log(product.id);
+           
            
 
 
