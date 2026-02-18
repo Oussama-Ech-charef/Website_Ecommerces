@@ -50,13 +50,20 @@ fetch('products.json')
 function addTocart(product) {
     console.log(product);
 
+    // load current cart (empty array if none)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || []
+    // check if this product is already in the cart
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+        // increase quantity instead of pushing a new entry
+        existing.quantity += 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
 
-    cart.push({... product , quantity: 1})
-    localStorage.setItem('cart', JSON.stringify(cart))
-
-    updateCart()
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
 }
 
 
@@ -92,32 +99,32 @@ function updateCart() {
 
 
 
-    let delteButtons = document.querySelectorAll('.delete_item')
+    let delteButtons = document.querySelectorAll('.delete_item');
 
     delteButtons.forEach(button => {
-        button.addEventListener('click' , (event) => {
-            const itemIndex = event.target.closest('button').getAttribute('data-index')
-
-            removeFromCart(itemIndex)
-        })
-    })
+        button.addEventListener('click', (event) => {
+            // use currentTarget to ensure we reference the button even if the icon is clicked
+            const itemIndex = event.currentTarget.getAttribute('data-index');
+            removeFromCart(itemIndex);
+        });
+    });
 
 }
 
 
 function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || []
-    let removedProduct = cart.splice(index, 1)[0]
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let removedProduct = cart.splice(index, 1)[0];
 
-    localStorage.setItem('cart', JSON.stringify(cart))
+    // save updated cart back to storage
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-btn.innerHTML = ` <i class="fa-solid fa-cart-shopping"></i> Item in cart `   
-
+    // when an item is removed, reset the add-to-cart button(s) for that product
     if (removedProduct && removedProduct.id !== undefined) {
-        updateButtonsState(removedProduct.id)
+        updateButtonsState(removedProduct.id);
     }
 
-    updateCart()
+    updateCart();
 }
 
 function updateButtonsState(productId) {
@@ -132,6 +139,4 @@ function updateButtonsState(productId) {
 
 
 
-updateCart()     
-
-
+updateCart()   
