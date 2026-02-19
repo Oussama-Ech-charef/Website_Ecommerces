@@ -75,19 +75,33 @@ function updateCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || []
 
 
+
+
+    let total_price = 0
+
+    let total_count = 0
+
     cartItemsContainer.innerHTML = "";
     cart.forEach((item , index) => {
+
+
+        let total_Price_item = item.price * item.quantity;
+
+        total_price += total_Price_item
+        total_count += item.quantity
+
+
         cartItemsContainer.innerHTML += `
         
         <div class="item_cart">
                 <img src="${item.img}" alt="online">
                 <div class="content">
                     <h4>${item.name}</h4>
-                    <p class="price_cart">${item.price}</p>
+                    <p class="price_cart">$${total_Price_item}</p>
                     <div class="quantity_control">
-                        <button class="dectese_quantity">-</button>
+                        <button class="dectese_quantity" data-index=${index}>-</button>
                         <span class="quantity">${item.quantity}</span>
-                        <button class="Increase_quantity">+</button>
+                        <button class="Increase_quantity" data-index=${index}>+</button>
                     </div>
                 </div>
 
@@ -96,6 +110,56 @@ function updateCart() {
         
         `
     })
+
+
+    let price_cart_total = document.querySelector('.price_cart_total');
+
+    let count_item_cart = document.querySelector('.Count_item_cart');
+
+    let count_item_header = document.querySelector('.count_item_header');
+
+
+
+
+    price_cart_total.innerHTML = `
+    
+    $ ${total_price}
+    
+    `
+
+    count_item_cart.innerHTML = total_count
+
+    count_item_header.innerHTML = total_count
+
+
+
+
+
+
+
+
+
+    let increaseButtons = document.querySelectorAll(".Increase_quantity");
+    let decteseButtons = document.querySelectorAll(".dectese_quantity");
+
+    increaseButtons.forEach(button => {
+        button.addEventListener("click" , (event) => {
+            const itemIndex = event.target.getAttribute("data-index")
+            increaseQuantity(itemIndex)
+        })
+    })
+    
+    decteseButtons.forEach(button => {
+        button.addEventListener("click" , (event) => {
+            const itemIndex = event.target.getAttribute("data-index")
+            decteaseQuantity(itemIndex)
+        })
+    })
+
+
+
+
+
 
 
 
@@ -109,6 +173,27 @@ function updateCart() {
         });
     });
 
+}
+
+
+
+function increaseQuantity(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+    cart[index].quantity += 1
+    localStorage.setItem('cart' , JSON.stringify(cart))
+    updateCart()
+}
+
+function decteaseQuantity(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || []
+    if(cart[index].quantity > 1) {
+
+        cart[index].quantity -= 1
+    }
+
+    localStorage.setItem('cart' , JSON.stringify(cart))
+    updateCart()
 }
 
 
