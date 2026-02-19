@@ -68,8 +68,11 @@ fetch('products.json')
     data.forEach(product => {
         if(product.catetory == "electronics"){
 
-
             const isInCart = cart.some(cartItem => cartItem.id === product.id)
+
+
+
+            
 
 
             const old_price_Pargrahp = product.old_price ? `<p class="old_price">$${product.old_price}</p>` : "";
@@ -104,8 +107,8 @@ fetch('products.json')
                        </div>
 
                        <div class="icons">
-                           <span class="btn_add_cart" data-id="${product.id}">
-                                <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
+                           <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
+                                    <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
                             </span>
                            <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
                        </div>
@@ -126,6 +129,7 @@ fetch('products.json')
 
 
             const isInCart = cart.some(cartItem => cartItem.id === product.id)
+
 
 
             const old_price_Pargrahp = product.old_price ? `<p class="old_price">$${product.old_price}</p>` : "";
@@ -160,9 +164,9 @@ fetch('products.json')
                        </div>
 
                        <div class="icons">
-                           <span class="btn_add_cart" data-id="${product.id}">
-                                <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
-                            </span>
+                           <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
+                                    <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
+                                </span>
                            <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
                        </div>
                    </div>
@@ -182,6 +186,7 @@ fetch('products.json')
 
 
             const isInCart = cart.some(cartItem => cartItem.id === product.id)
+
 
 
             const old_price_Pargrahp = product.old_price ? `<p class="old_price">$${product.old_price}</p>` : "";
@@ -216,9 +221,9 @@ fetch('products.json')
                        </div>
 
                        <div class="icons">
-                           <span class="btn_add_cart" data-id="${product.id}">
-                                <i class="fa-solid fa-cart-shopping"></i> add to cart
-                            </span>
+                           <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
+                                    <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
+                                </span>
                            <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
                        </div>
                    </div>
@@ -246,4 +251,4 @@ fetch('products.json')
 
 
 
-                                                                
+                                                                                                                   
