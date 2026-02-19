@@ -25,6 +25,8 @@ fetch('products.json')
     data.forEach(product => {
         if(product.old_price) {
 
+            const isInCart = cart.some(cartItem => cartItem.id === product.id)
+
             const percent_disc = Math.floor((product.old_price - product.price) / product.old_price * 100)
 
 
@@ -54,8 +56,8 @@ fetch('products.json')
                              </div>
 
                              <div class="icons">
-                                <span class="btn_add_cart" data-id="${product.id}">
-                                    <i class="fa-solid fa-cart-shopping"></i> add to cart
+                                <span class="btn_add_cart ${isInCart ? 'active' : ''}" data-id="${product.id}">
+                                    <i class="fa-solid fa-cart-shopping"></i> ${isInCart ? 'Item in cart' : 'add to cart'}
                                 </span>
                                 <span class="icon_product"><i class="fa-regular fa-heart"></i></span>
                              </div>
