@@ -906,7 +906,7 @@ footer .bottom_footer .payment_img {
 
 /* Start Cart */
 
-
+.open_menu,
 .close_menu {
     display: none;
 }
@@ -935,12 +935,12 @@ footer .bottom_footer .payment_img {
 
     header .top_header .search_box input {
         width: calc(100% - 200px);
-    }
+    }                          
 
     header .bottom_header .nav_links {
         position: fixed;
         top: 0;
-        left: 0;
+        left: -400px;
         bottom: 0;
         background: #fff;
         width: 400px;
@@ -948,12 +948,88 @@ footer .bottom_footer .payment_img {
         align-items: center;
         padding-top: 100px;
         border: 1px solid #b5b5b596;
+        transition: 0.4s ease-in-out;
+
     }
 
 
     .close_menu {
         display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 30px;
     }
+
+    .open_menu {
+        display: block;
+        font-size: 25px;
+    }
+
+    .open_menu i {
+        color: var(--main_color);
+        border: 1px solid var(--main_color);
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 3px;
+    }
+
+
+    header .bottom_header .nav_links.active {
+        left: 0;
+    }
+
+    header .bottom_header .category_nav {
+        width: auto;
+    }
+
+    header .bottom_header .category_nav .category_btn p {
+        font-size: 13px ;
+        margin: 0 10px;
+    }
+
+    header .bottom_header nav {
+        gap: 20px;
+    }
+
+    .slider .container {
+        margin-top: 60px;
+    }
+
+
+}
+
+
+@media (max-width: 500px) {
+    header .bottom_header .category_nav {
+        display: none;
+    }
+
+
+    header .top_header .search_box {
+        width:  100%;
+    }
+
+    header .top_header .search_box select {
+        width: 140px;
+    }
+    header .top_header .search_box input {
+        width: calc(100% - 140px);
+    }
+
+    header .bottom_header .nav_links {
+        width: 100%;
+        left: -100%;
+    }
+    
+    .cart {
+        width: 100%;
+        right: -100%;
+    }
+
+
 
 
 }
