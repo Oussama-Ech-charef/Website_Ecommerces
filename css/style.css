@@ -915,6 +915,10 @@ footer .bottom_footer .payment_img {
 
 @media (max-width: 1100px) {
 
+    body {
+        padding: 240px;
+    }
+
     header .top_header .container {
         flex-wrap: wrap;
     }
@@ -994,10 +998,28 @@ footer .bottom_footer .payment_img {
         gap: 20px;
     }
 
-    .slider .container {
-        margin-top: 60px;
+
+        .banners_4 .container {
+        flex-wrap: wrap;
     }
 
+    .banner_2 .container .box {
+        width: 49%;
+        margin-bottom: 20px;
+    }
+    
+
+
+}
+
+
+@media (max-width:1000px) {
+    .slider .banner_2 {
+        display: none;
+    }
+    .slider .container .slide-swp {
+        width: 100%;
+    }
 
 }
 
