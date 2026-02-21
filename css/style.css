@@ -289,6 +289,7 @@ header .bottom_header .nav_links li.active a{
 .slider .container{
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .slider  .banner_2{
@@ -1003,9 +1004,10 @@ footer .bottom_footer .payment_img {
         flex-wrap: wrap;
     }
 
-    .banner_2 .container .box {
+    .banners_4 .container .box {
         width: 49%;
         margin-bottom: 20px;
+        justify-content: space-around;
     }
     
 
@@ -1014,12 +1016,27 @@ footer .bottom_footer .payment_img {
 
 
 @media (max-width:1000px) {
-    .slider .banner_2 {
+    .slider .banner_2{
         display: none;
     }
-    .slider .container .slide-swp {
+    .slider .container .slide-swp{
         width: 100%;
     }
+  
+
+
+    footer .container{
+        flex-wrap: wrap;
+    }
+    footer .container .big_row{
+        width: 40%;
+        margin-bottom: 20px;
+    }
+    footer .container .row{
+        width: 30%;
+        margin-bottom: 20px;
+    }
+
 
 }
 
