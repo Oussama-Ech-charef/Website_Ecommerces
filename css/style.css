@@ -446,8 +446,10 @@ header .bottom_header .nav_links li.active a{
     border: 1px solid var(--border_color);
 }
 
-.slide .container .mySwiper .btn_Swip::after{
-    font-size: 12px;
+.slide .container .mySwiper .btn_Swip svg{
+
+    width: 20px;
+    height: 20px;
 }
  .slide .container .mySwiper .btn_Swip.swiper-button-prev{
     left: calc(100% - 80px);
