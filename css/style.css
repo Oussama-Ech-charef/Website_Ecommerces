@@ -1042,3 +1042,42 @@ color: var(--color_heading);
 
 
 
+@media (max-width:500px) {
+    
+    header .bottom_header .category_nav{
+        display: none;
+    }
+    header .top_header .search_box{
+        width: 100%;
+    }
+    header .top_header .search_box select{
+        width: 140px;
+    }
+    header .top_header .search_box input{
+        width: calc(100% - 140px);
+    }
+    header .bottom_header .nav_links{
+        width: 100%;
+        left: -100%;
+    }
+    .cart{
+        width: 100%;
+        right: -100%;
+    }
+
+    .banners_4 .container .box{
+        width: 100%;
+    }
+
+    .banners_4 .container .box h5{
+        font-size: 14px;
+    }
+    .banners_4 .container .box h6{
+        font-size: 13px;
+    }
+
+    .banners .banners_boxs.banner_3_img .box{
+        width: 100%;
+    }
+
+}
