@@ -1082,4 +1082,20 @@ color: var(--color_heading);
         width: 100%;
     }
 
+
+        .product .icons .btn_add_cart.active{
+        font-size: 13px;
+    }
+    .product .icons .btn_add_cart.active i{
+        font-size: 14px;
+    }
+
+
+    footer .container .row{
+        width: 100%;
+    }
+    footer .container .big_row{
+        width: 100%;
+    }
+
 }
