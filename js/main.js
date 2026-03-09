@@ -78,12 +78,16 @@ function addTocart(product) {
 
 function updateCart() {
 
-    let cartItemsContainer = document.getElementById("cart_items")
+    const cartItemsContainer = document.getElementById("cart_items")
 
-    let cart = JSON.parse(localStorage.getItem('cart')) || []
+    const cart = JSON.parse(localStorage.getItem('cart')) || []
+
+    const checkout_items = document.getElementById("checkout_items")
 
 
-
+    if(checkout_items) {
+        checkout_items.innerHTML=""
+    }
 
     let total_price = 0
 
@@ -117,6 +121,36 @@ function updateCart() {
             </div>
         
         `
+
+
+        if(checkout_items) {
+            checkout_items.innerHTML += `
+            <div class="item_cart">
+
+
+                            <div class="image_name">
+                                <img src="${item.img}" alt="online">
+
+                                <div class="content">
+                                    <h4>${item.name}</h4>
+                                    <p class="price_cart">$${total_Price_item}</p>
+                                    <div class="quantity_control">
+                                        <button class="dectese_quantity" data-index=${index}>-</button>
+                                        <span class="quantity">${item.quantity}</span>
+                                        <button class="Increase_quantity" data-index=${index}>+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button class="delete_item" data-index="${index}"><i class="fa-solid fa-trash-can"></i></button>
+
+
+
+                        </div>
+            
+            `
+        }
     })
 
 
@@ -138,6 +172,15 @@ function updateCart() {
     count_item_cart.innerHTML = total_count
 
     count_item_header.innerHTML = total_count
+
+
+
+    if(checkout_items) {
+        const subtotal_checkout = document.querySelector("subtotal_checkout");
+        const total_checkout = document.querySelector("total_checkout");
+
+        subtotal_checkout.innerHTML=
+    }
 
 
 
