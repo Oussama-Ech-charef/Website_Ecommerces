@@ -178,7 +178,8 @@ function updateCart() {
     if(checkout_items) {
         const subtotal_checkout = document.querySelector("subtotal_checkout");
         const total_checkout = document.querySelector("total_checkout");
-
+        console.log(oussama);
+        
         subtotal_checkout.innerHTML=
     }
 
