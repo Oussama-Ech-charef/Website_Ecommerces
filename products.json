@@ -180,13 +180,5 @@
     "price": 300,
     "old_price": 380,
     "catetory":"electronics"
-  },
-  {
-    "id": 25,
-    "img": "img/product/24.png",
-    "name": "Lenovo Monitor Legion R27fc-30 Gaming Curved",
-    "price": 300,
-    "old_price": 380,
-    "catetory":"electronics"
   }
 ]
